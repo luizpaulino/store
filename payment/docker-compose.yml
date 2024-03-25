@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  payment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: payment:latest
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mongo
+    networks:
+      - items_store-network
+      - payment-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - payment-network
+      - items_store-network
+
+networks:
+  items_store-network:
+    external: true
+  payment-network:
+    driver: bridge
+
+volumes:
+  mongo_data:

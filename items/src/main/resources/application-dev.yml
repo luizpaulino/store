@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      host: mongo
+
+authentication-service:
+  server:
+    host: auth
+    port: 8084
+server:
+  port: 8081

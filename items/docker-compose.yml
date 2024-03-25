@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  items:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: items:latest
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+    networks:
+      - store-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27018:27018"  # Map container port 27018 to host port 27018
+    volumes:
+      - mongo_data:/data/db
+    command: ["mongod", "--port", "27018"]
+    networks:
+      - store-network
+
+networks:
+  store-network:
+    driver: bridge
+
+volumes:
+  mongo_data:

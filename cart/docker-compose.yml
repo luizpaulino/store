@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  cart:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cart:latest
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mongo
+    networks:
+      - items_store-network
+      - cart-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27030:27030"
+    volumes:
+      - mongo_data:/data/db
+    command: ["mongod", "--port", "27030"]
+    networks:
+      - cart-network
+
+networks:
+  items_store-network:
+    external: true
+  cart-network:
+    driver: bridge
+
+volumes:
+  mongo_data:

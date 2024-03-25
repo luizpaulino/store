@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27018
+      database: items
+
+authentication-service:
+  user:
+    username: items@service.com
+    password: itemsService
+  server:
+    host: localhost
+    port: 8084
+
+server:
+  port: 9191
