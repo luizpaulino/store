@@ -6,6 +6,7 @@
 
 - Clonar o projeto e rodar o script store.sh -> Esse script garante a ordem necessária de inicialização.
 - Collection do [arquivo JSON da coleção](./store_collection.json).
+    - Utilizar a collection para facilitar as requisições para a aplicação, a collection pode ser importada no Insomnia ou no Postman.
 
 # Ordem de Inicialização do Projeto
 
