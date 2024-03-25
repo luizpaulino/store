@@ -22,6 +22,18 @@ Segue abaixo a ordem recomendada para iniciar os serviços do projeto:
 1. **Items**: Inicie o serviço "Items" para criar a rede de conexão Docker.
 2. **Cart**, **Auth**, **Payment**: Após o serviço "Items".
 
+# Requisições com Header "userId" Obrigatório
+
+Neste projeto, é obrigatório incluir o header "userId" em determinadas requisições, especificamente nas operações relacionadas à adição de itens no carrinho ("Cart") e no processo de pagamento ("Payment"). O header "userId" é essencial para identificar o usuário associado à ação realizada, garantindo segurança e consistência nas operações.
+
+## Header "userId" nas Requisições
+
+Ao realizar as seguintes operações, certifique-se de incluir o header "userId" com o ID do usuário correspondente:
+
+### Adição de Item no Carrinho ("Cart")
+
+Ao enviar uma requisição para adicionar um item ao carrinho, certifique-se de incluir o header "userId" com o ID do usuário.
+
 # Autenticação de Serviços
 
 ## Visão Geral
