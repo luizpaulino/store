@@ -67,6 +67,12 @@ Os usuários criados automaticamente terão as seguintes credenciais padrão:
   - Email: payment@service.com
   - Senha: paymentService
 
+Os usuários ficam configurados na seguinte estrutura, dentro do application.yml:
+
+    authentication-service:
+      user:
+        username: payment@service.com
+        password: paymentService
 ## Nota
 
 Este processo de criação automática de usuários ocorre apenas durante a inicialização do serviço de autenticação e é projetado para garantir a integridade e o funcionamento adequado dos sistemas inter-relacionados.
